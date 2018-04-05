@@ -46,7 +46,14 @@ values."
      org
      git
      ranger
-     c-c++
+     (c-c++ :variables
+            c-c++-default-mode-for-headers 'c++-mode
+            c-c++-enable-clang-support t
+            c-c++-enable-google-newline t
+            c-c++-enable-google-style t
+            c-c++-enable-c++11 t
+            c-c++-enable-rtags-support t)
+
      (cmake :variables cmake-enable-cmake-ide-support t)
      python
      (latex :variables
