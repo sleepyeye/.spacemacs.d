@@ -343,6 +343,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
     ((eq system-type 'window-nt) "%HOMEPATH%/Dropbox/"))
    fp/org-directory (concat fp/dropbox-directory "org/") ;; my org mode directory
    fp/note-directory (concat fp/org-directory "note/"))  ;; my note directory
+
+
+  (push "~/.spacemacs.d/configs/" load-path)
   )
 
 (defun dotspacemacs/user-config ()
@@ -352,15 +355,11 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (require 'config-c++)
+  (require 'config-lang)
+
   ;; Insert tab instead of indent!
   (setq tab-always-indent nil)
-
-  ;; Korean language setup
-  (set-language-environment "Korean")
-  (set-fontset-font t 'hangul (font-spec :name "NanumGothic"))
-  (global-set-key (kbd "<kana>") 'toggle-input-method)
-  (global-set-key (kbd "<S-spc>") 'toggle-input-method)
-  (prefer-coding-system 'utf-8)
 
   ;; Enable doom theme's special features
   (doom-themes-org-config)
@@ -368,19 +367,6 @@ you should place your code here."
 
   ;; Enable visual line mode (line wrapping)
   (global-visual-line-mode)
-
-  ;; cquery
-  (defun cquery//enable ()
-    (condition-case nil
-        (lsp-cquery-enable)
-      (user-error nil)))
-
-
-  (use-package cquery
-    :commands lsp-cquery-enable
-    :init (add-hook 'c-mode-common-hook #'cquery//enable)
-    :config
-    (setq cquery-executable "/usr/local/bin/cquery"))
 
   (setq org-ref-note-title-format
         "* TODO %y - %t\n :PROPERTIES:\n  :Custom_ID: %k\n  :AUTHOR: %9a\n  :JOURNAL: %j\n  :YEAR: %y\n  :VOLUME: %v\n  :PAGES: %p\n  :DOI: %D\n  :URL: %U\n :END:\n\n"
