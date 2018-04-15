@@ -38,7 +38,9 @@ values."
      ;; ----------------------------------------------------------------
 
      helm
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-complete-with-key-sequence nil)
      syntax-checking
      emacs-lisp
      markdown
@@ -405,7 +407,21 @@ This function is called at the very end of Spacemacs initialization."
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
  '(package-selected-packages
    (quote
-    (cquery auto-yasnippet yapfify xterm-color smeargle shell-pop ranger pyvenv pytest pyenv-mode py-isort pip-requirements orgit org-ref pdf-tools key-chord ivy tablist org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download multi-term mmm-mode markdown-toc markdown-mode magit-gitflow live-py-mode hy-mode dash-functional htmlize helm-pydoc helm-gitignore helm-company helm-c-yasnippet helm-bibtex parsebib gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit ghub let-alist with-editor eshell-z eshell-prompt-extras esh-help disaster cython-mode company-statistics company-c-headers company-auctex company-anaconda company cmake-mode clang-format biblio biblio-core yasnippet auctex anaconda-mode pythonic ac-ispell auto-complete doom-themes ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (web-beautify livid-mode skewer-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc impatient-mode simple-httpd helm-gtags ggtags counsel-gtags company-tern tern coffee-mode add-node-modules-path auto-yasnippet yapfify xterm-color smeargle shell-pop ranger pyvenv pytest pyenv-mode py-isort pip-requirements orgit org-ref pdf-tools key-chord ivy tablist org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download multi-term mmm-mode markdown-toc markdown-mode magit-gitflow live-py-mode hy-mode dash-functional htmlize helm-pydoc helm-gitignore helm-company helm-c-yasnippet helm-bibtex parsebib gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit ghub let-alist with-editor eshell-z eshell-prompt-extras esh-help disaster cython-mode company-statistics company-c-headers company-auctex company-anaconda company cmake-mode clang-format biblio biblio-core yasnippet auctex anaconda-mode pythonic ac-ispell auto-complete doom-themes ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+ '(safe-local-variable-values
+   (quote
+    ((helm-ctest-dir . "build/test/")
+     (helm-make-build-dir . "build/")
+     (cmake-ide-cmake-opts . "-DCMAKE_BUILD_TYPE=Debug")
+     (cmake-ide-build-dir . "/home/wonjun/workspace/zed-examples/depth/build/")
+     (cmake-ide-project-dir . "/home/wonjun/workspace/zed-examples/depth/")
+     (helm-ctest-dir . "/home/fpenguin23/workspace/mitsuba-af602c6fd98a/build/test")
+     (helm-make-build-dir . "/home/fpenguin23/workspace/mitsuba-af602c6fd98a/build/debug")
+     (helm-ctest-dir . "./build/test/")
+     (helm-make-build-dir . "./build/")
+     (helm-ctest-dir . "/home/wonjun/workspace/zed-examples/depth/build/test/")
+     (helm-make-arguments . "-j8")
+     (helm-make-build-dir . "/home/wonjun/workspace/zed-examples/depth/build/")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
